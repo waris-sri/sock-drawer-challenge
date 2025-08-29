@@ -95,7 +95,7 @@ public class CustomLinkedList<T> {
     String result = "";
     Node<T> curr = first;
     while (curr.next != null) {
-      result += curr.data + " → ";
+      result += curr.data + ", ";
       curr = curr.next;
     }
     result += curr.data;
