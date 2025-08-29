@@ -18,7 +18,7 @@ public class Sock {
   }
 
   public void listAllSocks() {
-    System.out.println("Socks:");
+    System.out.println("All Socks:");
     for (int i = 0; i < socks.size(); i++) {
       System.out.println("\tIndex: " + i + socks.get(i).toString());
     }
@@ -41,7 +41,7 @@ public class Sock {
   }
 
   public void addNewSock(String description) {
-    socks.add(new Description(description));
+    socks.add(new Description(description)); // -------------------------------------------------
   }
 
   public void repairSocks(int index) {
@@ -49,7 +49,7 @@ public class Sock {
   }
 
   public void removeSockByIndex(int index) {
-    socks.remove(index);
+    socks.remove(index); // -------------------------------------------------
   }
 
   public void findLostSocks() {
