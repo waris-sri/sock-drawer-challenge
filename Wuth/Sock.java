@@ -1,5 +1,3 @@
-package Lect3;
-
 import java.util.ArrayList;
 
 public class Sock {
@@ -90,3 +88,4 @@ public class Sock {
         socks.clear();
     }
 }
+
