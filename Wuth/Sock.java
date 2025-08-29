@@ -27,7 +27,7 @@ public class Sock {
     public void findMatchingPair(String color) {
         ArrayList<Integer> index = new ArrayList<>();
         for(int i = 0; i < socks.size(); i++) {
-            if(socks.get(i).getDetail().toLowerCase().equals("clean") && socks.get(i).getColor().toLowerCase().equals(color.toLowerCase())) {
+            if(socks.get(i).getDetail().equalsIgnoreCase("clean") && socks.get(i).getColor().equalsIgnoreCase(color)) {
                 index.add(i);
             }
         }
@@ -52,9 +52,9 @@ public class Sock {
 
     public void findLostSocks() {
         ArrayList<Description> lost = new ArrayList<>();
-        for(int i = 0; i < socks.size(); i++) {
-            if(socks.get(i).getDetail().toLowerCase().equals("lost")) {
-                lost.add(socks.get(i));
+        for (Description sock : socks) {
+            if (sock.getDetail().equalsIgnoreCase("lost")) {
+                lost.add(sock);
             }
         }
         System.out.println("Lost Socks:");
@@ -65,7 +65,7 @@ public class Sock {
 
     public void discardSock(String description) {
         for(int i = 0; i < socks.size(); i++) {
-            if(socks.get(i).getDetail().toLowerCase().equals(description.toLowerCase())) {
+            if(socks.get(i).getDetail().equalsIgnoreCase(description)) {
                 socks.remove(i);
                 break;
             }
@@ -79,7 +79,7 @@ public class Sock {
     public void countDamagedSocks() {
         int damaged = 0;
         for(int i = 0; i < socks.size(); i++) {
-            if(socks.get(i).getDetail().toLowerCase().equals("damaged")) {
+            if(socks.get(i).getDetail().equalsIgnoreCase("damaged")) {
                 damaged++;
             }
         }
