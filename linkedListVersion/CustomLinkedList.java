@@ -39,7 +39,6 @@ public class CustomLinkedList<T> {
     this.size++;
   }
 
-  // add right after the head node
   public void addFirst(T data) {
     Node<T> newNode = new Node<>(data);
     newNode.next = first;

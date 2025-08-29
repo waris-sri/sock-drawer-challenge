@@ -8,7 +8,7 @@ public class GreatSockDrawerChallenge {
     socks.addNewSock("Blue (Hole)");
     socks.addNewSock("Striped (Clean)");
     socks.addNewSock("Green (Lost)");
-    socks.addNewSock("Polka (Clean)");
+    socks.addNewSock("Polka Dots (Clean)");
     socks.addNewSock("Black (Hole)");
 
     // Person 1

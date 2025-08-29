@@ -11,14 +11,15 @@ public class Sock extends CustomLinkedList<Description> {
     if (index < socks.size()) {
       socks.get(index).setDetail("Damaged");
     } else {
-      System.out.println("Index out of bounds");
+      System.out.println("Index out of bounds!");
     }
   }
 
   public void listAllSocks() {
-    System.out.println("Socks:");
+    System.out.println("ALL SOCKS");
+    System.out.println("=".repeat(55));
     for (int i = 0; i < socks.size(); i++) {
-      System.out.println("\tIndex: " + i + socks.get(i).toString());
+      System.out.println("Index: " + i + socks.get(i).toString());
     }
   }
 
@@ -31,13 +32,9 @@ public class Sock extends CustomLinkedList<Description> {
       }
     }
     if (!index.isEmpty()) {
-      // System.out.println(
-      // "Matched pair: " + index.toString().substring(1, index.toString().length() -
-      // 1));
-      // TODO: Verify output
-      System.out.println("Matched pair: " + index.toString());
+      System.out.println("\nMatched pair(s): " + index.toString());
     } else {
-      System.out.println("No such matching pair");
+      System.out.println("\nNo such matching pair(s).");
     }
   }
 
@@ -60,9 +57,10 @@ public class Sock extends CustomLinkedList<Description> {
         lost.add(socks.get(i));
       }
     }
-    System.out.println("Lost Socks:");
+    System.out.println("\nLOST SOCKS");
+    System.out.println("=".repeat(55));
     for (int i = 0; i < lost.size(); i++) {
-      System.out.println("\tIndex: " + i + lost.get(i).toString());
+      System.out.println("Index: " + i + lost.get(i).toString());
     }
   }
 
@@ -76,7 +74,7 @@ public class Sock extends CustomLinkedList<Description> {
   }
 
   public void countTotalSocks() {
-    System.out.println("Total number of socks currently in drawer: " + socks.size());
+    System.out.println("\nTotal number of socks currently in drawer: " + socks.size());
   }
 
   public void countDamagedSocks() {

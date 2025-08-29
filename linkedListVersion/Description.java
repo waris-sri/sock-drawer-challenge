@@ -30,6 +30,6 @@ public class Description {
 
   @Override
   public String toString() {
-    return "\tColor: " + color + "\t\tDetail: " + detail;
+    return String.format("\tColor: %-15s Detail: %-10s", color, detail);
   }
 }
