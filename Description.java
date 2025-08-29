@@ -1,3 +1,5 @@
+package Lect3;
+
 public class Description {
     String description;
     String color;
@@ -25,4 +27,3 @@ public class Description {
         return "\tColor: " + color + "\tDetail: " + detail;
     }
 }
-
