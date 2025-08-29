@@ -1,5 +1,3 @@
-package Lect3;
-
 public class GreatSockDrawerChallenge {
     public static void main(String[] args) {
         Sock socks = new Sock();
@@ -32,3 +30,4 @@ public class GreatSockDrawerChallenge {
         socks.clearDrawer();
     }
 }
+
