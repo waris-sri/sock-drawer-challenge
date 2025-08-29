@@ -31,8 +31,11 @@ public class Sock extends CustomLinkedList<Description> {
       }
     }
     if (!index.isEmpty()) {
-      System.out.println(
-          "Matched pair: " + index.toString().substring(1, index.toString().length() - 1));
+      // System.out.println(
+      // "Matched pair: " + index.toString().substring(1, index.toString().length() -
+      // 1));
+      // TODO: Verify output
+      System.out.println("Matched pair: " + index.toString());
     } else {
       System.out.println("No such matching pair");
     }
@@ -52,9 +55,9 @@ public class Sock extends CustomLinkedList<Description> {
 
   public void findLostSocks() {
     CustomLinkedList<Description> lost = new CustomLinkedList<>();
-    for (Description sock : socks) {
-      if (sock.getDetail().equalsIgnoreCase("lost")) {
-        lost.add(sock);
+    for (int i = 0; i < socks.size(); i++) {
+      if ("lost".equalsIgnoreCase(socks.get(i).getDetail())) {
+        lost.add(socks.get(i));
       }
     }
     System.out.println("Lost Socks:");

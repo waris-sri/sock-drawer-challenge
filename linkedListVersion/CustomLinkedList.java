@@ -11,7 +11,7 @@ class Node<T> {
 }
 
 public class CustomLinkedList<T> {
-  public Node<T> first;
+  public Node<T> first; // first node with data; assume no dummy head
   public int size;
 
   // constructor
@@ -25,7 +25,7 @@ public class CustomLinkedList<T> {
     this.first = new Node<>(data);
   }
 
-  public void append(T data) {
+  public void add(T data) {
     Node<T> newNode = new Node<>(data);
     if (first == null) {
       first = newNode;
@@ -36,7 +36,7 @@ public class CustomLinkedList<T> {
       }
       last.next = newNode;
     }
-    size++;
+    this.size++;
   }
 
   // add right after the head node
@@ -44,7 +44,7 @@ public class CustomLinkedList<T> {
     Node<T> newNode = new Node<>(data);
     newNode.next = first;
     first = newNode;
-    size++;
+    this.size++;
   }
 
   public T delFirst() {
@@ -53,12 +53,12 @@ public class CustomLinkedList<T> {
     }
     T deletedVal = first.data;
     first = first.next;
-    size--;
+    this.size--;
     return deletedVal;
   }
 
-  public boolean delAt(int idx) {
-    if (idx < 0 || idx >= size) {
+  public boolean remove(int idx) {
+    if (idx < 0 || idx >= this.size) {
       return false;
     }
     if (idx == 0) {
@@ -71,8 +71,24 @@ public class CustomLinkedList<T> {
     }
     Node<T> target = curr.next; // target is at index `idx`
     curr.next = target.next; // skip target node (links node at idx-1 to idx+1`)
-    size--;
+    this.size--;
     return true;
+  }
+
+  public T get(int idx) {
+    if (idx < 0 || idx >= this.size) {
+      throw new IndexOutOfBoundsException(
+          "\n\tYou tried to access index " + idx + " while the size is " + this.size + ".");
+    }
+    Node<T> curr = first;
+    for (int i = 0; i < idx; i++) {
+      curr = curr.next;
+    }
+    return curr.data;
+  }
+
+  public int size() {
+    return this.size;
   }
 
   @Override
@@ -87,17 +103,34 @@ public class CustomLinkedList<T> {
     return result;
   }
 
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+  public void clear() {
+    first = null;
+    size = 0;
+  }
+
+  // test
   public static void main(String[] args) {
-    CustomLinkedList<Integer> myIntegerList = new CustomLinkedList<>();
-    myIntegerList.append(5);
-    myIntegerList.append(6);
-    myIntegerList.append(1);
-    myIntegerList.append(4);
-    myIntegerList.append(7);
-    myIntegerList.append(12);
-    myIntegerList.append(59);
-    myIntegerList.append(9);
-    myIntegerList.append(42);
-    System.out.println(myIntegerList.toString());
+    CustomLinkedList<Integer> integers = new CustomLinkedList<>();
+    integers.add(5);
+    integers.add(6);
+    integers.add(8);
+    integers.add(9);
+    integers.add(3);
+    integers.add(4);
+    integers.add(2);
+    integers.add(1);
+    integers.addFirst(0);
+    integers.addFirst(99);
+    integers.delFirst();
+    integers.remove(2);
+    System.out.println(integers.toString());
+    integers.remove(3);
+    System.out.println(integers.toString());
+    System.out.println(integers.get(5));
+    System.out.println(integers.get(99));
   }
 }

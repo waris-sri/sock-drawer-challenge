@@ -1,13 +1,14 @@
 package linkedListVersion;
 
+// Person 6
 public class GreatSockDrawerChallenge {
   public static void main(String[] args) {
     Sock socks = new Sock();
-    socks.addNewSock("Red(Clean)");
+    socks.addNewSock("Red (Clean)");
     socks.addNewSock("Blue (Hole)");
     socks.addNewSock("Striped (Clean)");
     socks.addNewSock("Green (Lost)");
-    socks.addNewSock("Polka Dot (Clean)");
+    socks.addNewSock("Polka (Clean)");
     socks.addNewSock("Black (Hole)");
 
     // Person 1

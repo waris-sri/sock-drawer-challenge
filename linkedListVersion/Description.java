@@ -30,6 +30,6 @@ public class Description {
 
   @Override
   public String toString() {
-    return "\tColor: " + color + "\tDetail: " + detail;
+    return "\tColor: " + color + "\t\tDetail: " + detail;
   }
 }
