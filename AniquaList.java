@@ -1,27 +1,25 @@
-package Lect3;
-
 import java.util.LinkedList;
 
-public class AniquaList <T> extends LinkedList<T> {
+public class AniquaList<T> extends LinkedList<T> {
     public Node first;
 
     public AniquaList() {
         first = null;
     }
 
-    public AniquaList(int data) {       // Overload
+    public AniquaList(int data) { // Overload
         this.first = new Node(data);
     }
 
     @Override
     public boolean add(T elements) {
         Node newNode = new Node(elements);
-        if(first == null) {
+        if (first == null) {
             first = newNode;
             return true;
         }
         Node current = first;
-        while(current.next != null) {
+        while (current.next != null) {
             current = current.next;
         }
         current.next = newNode;
@@ -51,7 +49,7 @@ public class AniquaList <T> extends LinkedList<T> {
     @Override
     public T get(int index) {
         Node current = first;
-        for(int i = 0; i < index; i++) {
+        for (int i = 0; i < index; i++) {
             current = current.next;
         }
         return (T) current.data;
@@ -61,7 +59,7 @@ public class AniquaList <T> extends LinkedList<T> {
     public int size() {
         int count = 0;
         Node current = first;
-        while(current != null) {
+        while (current != null) {
             count++;
             current = current.next;
         }
@@ -69,7 +67,7 @@ public class AniquaList <T> extends LinkedList<T> {
     }
 }
 
-class Node <T> {
+class Node<T> {
     public T data;
     public Node next;
 

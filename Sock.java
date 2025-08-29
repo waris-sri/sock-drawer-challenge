@@ -1,5 +1,3 @@
-package Lect3;
-
 import java.util.LinkedList;
 
 public class Sock {
@@ -10,7 +8,7 @@ public class Sock {
     }
 
     public void markDamaged(int index) {
-        if(index < socks.size()) {
+        if (index < socks.size()) {
             socks.get(index).setDetail("Damaged");
         } else {
             System.out.println("Index out of bounds");
@@ -26,14 +24,14 @@ public class Sock {
 
     public void findMatchingPair(String color) {
         AniquaList<Integer> index = new AniquaList<>();
-        for(int i = 0; i < socks.size(); i++) {
-            if(socks.get(i).getDetail().equalsIgnoreCase("clean") && socks.get(i).getColor().equalsIgnoreCase(color)) {
+        for (int i = 0; i < socks.size(); i++) {
+            if (socks.get(i).getDetail().equalsIgnoreCase("clean") && socks.get(i).getColor().equalsIgnoreCase(color)) {
                 index.add(i);
             }
         }
-        if(!index.isEmpty()) {
+        if (!index.isEmpty()) {
             System.out.print("Matched pair: ");
-            for(int i = 0; i < index.size(); i++) {
+            for (int i = 0; i < index.size(); i++) {
                 System.out.print(index.get(i) + " ");
             }
             System.out.println();
@@ -43,7 +41,7 @@ public class Sock {
     }
 
     public void addNewSock(String description) {
-        socks.add(new Description(description));        //-------------------------------------------------
+        socks.add(new Description(description)); // -------------------------------------------------
     }
 
     public void repairSocks(int index) {
@@ -51,7 +49,7 @@ public class Sock {
     }
 
     public void removeSockByIndex(int index) {
-        socks.remove(index);                            //-------------------------------------------------
+        socks.remove(index); // -------------------------------------------------
     }
 
     public void findLostSocks() {
@@ -68,8 +66,8 @@ public class Sock {
     }
 
     public void discardSock(String description) {
-        for(int i = 0; i < socks.size(); i++) {
-            if(socks.get(i).getDetail().equalsIgnoreCase(description)) {
+        for (int i = 0; i < socks.size(); i++) {
+            if (socks.get(i).getDetail().equalsIgnoreCase(description)) {
                 socks.remove(i);
                 break;
             }
