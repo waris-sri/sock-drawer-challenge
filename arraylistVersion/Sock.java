@@ -1,10 +1,12 @@
-import java.util.LinkedList;
+package arraylistVersion;
+
+import java.util.ArrayList;
 
 public class Sock {
-  LinkedList<Description> socks;
+  ArrayList<Description> socks;
 
   public Sock() {
-    socks = new LinkedList<>();
+    socks = new ArrayList<>();
   }
 
   public void markDamaged(int index) {
@@ -23,7 +25,7 @@ public class Sock {
   }
 
   public void findMatchingPair(String color) {
-    LinkedList<Integer> index = new LinkedList<>();
+    ArrayList<Integer> index = new ArrayList<>();
     for (int i = 0; i < socks.size(); i++) {
       if (socks.get(i).getDetail().equalsIgnoreCase("clean")
           && socks.get(i).getColor().equalsIgnoreCase(color)) {
@@ -51,7 +53,7 @@ public class Sock {
   }
 
   public void findLostSocks() {
-    LinkedList<Description> lost = new LinkedList<>();
+    ArrayList<Description> lost = new ArrayList<>();
     for (Description sock : socks) {
       if (sock.getDetail().equalsIgnoreCase("lost")) {
         lost.add(sock);
