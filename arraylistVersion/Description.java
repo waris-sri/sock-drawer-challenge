@@ -1,3 +1,5 @@
+package arraylistVersion;
+
 public class Description {
     String description;
     String color;
