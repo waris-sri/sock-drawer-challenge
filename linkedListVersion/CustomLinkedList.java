@@ -133,3 +133,4 @@ public class CustomLinkedList<T> {
     System.out.println(integers.get(99));
   }
 }
+
